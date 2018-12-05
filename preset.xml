@@ -83,15 +83,13 @@
 <!--########  MyParticleTagger  ######################################## -->
 
 <processor name="MyParticleTagger" type="ParticleTagger">
-  <parameter name="ROOTFileName" type="string" >
-	 <!-- OUTPUT6.root -->
-	</parameter>
-  <parameter name="NewPID" type="string" > HadronTagger </parameter>
-  <parameter name="PFOCollection" type="string" > PandoraPFOs_withoutLepton </parameter>
-  <parameter name="TrackRelCollection" type="string" > MarlinTrkTracksMCTruthLink </parameter>
-  <parameter name="slope_kaon_selection" type="float" > 0.019 </parameter>
-  <parameter name="upper_limit_kaon_selection" type="float" > 0.1115 </parameter> 
-  <parameter name="lower_limit_kaon_selection" type="float" > 0.096 </parameter> 
+  <parameter name="PFOCollection" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs_withoutLepton </parameter>
+  <parameter name="TrackCollection" type="string" lcioInType="Track"> MarlinTrkTracks </parameter>
+  <parameter name="TrackRelCollection" type="string" lcioOutType="LCRelation"> MarlinTrkTracksMCTruthLink </parameter>
+  <parameter name="OutPFOCollection" type="string" lcioOutType="ReconstructedParticle"> PandoraPFOs_modified </parameter>
+  <parameter name="OutTrackCollection" type="string" lcioOutType="Track"> MarlinTrkTracks_modified </parameter>
+  <parameter name="InputExcludePFOCollection" type="string" lcioInType="ReconstructedParticle"> SelectedLepton </parameter>
+  <parameter name="OutputRelCollection" type="string" lcioOutType="LCRelation"> FinalJets_newrel </parameter>
 </processor>
 
 <!--########  JetClusteringAndFlavorTag  ######################################## -->
