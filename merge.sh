@@ -8,4 +8,6 @@
 #  hadd -f root_merge/aftervertexrestore_hadronic_eLpR_kekcc_500k.root rootfile/kekcc/aftervertexrestore*I108679*.root rootfile/kekcc/aftervertexrestore*I108681*.root
 #fi
 
-hadd -f root_merge/leptonic_yyxyev_eLeR_old_lcut.root rootfile/rv01*I108670*
+hadd -f root_merge/TrashRecoProcessor_out/before_vtx_recovery/RecoTest_before.root /hsm/ilc/users/yokugawa/run_preset/TrashRecoProcessor_out/before_vtx_recovery/*NewVtx_TRP_before*
+hadd -f root_merge/TrashRecoProcessor_out/after_vtx_recovery/RecoTest_after.root /hsm/ilc/users/yokugawa/run_preset/TrashRecoProcessor_out/after_vtx_recovery/*NewVtx_TRP_after*
+hadd -f root_merge/TruthVertexFinder_out/MCTest.root /hsm/ilc/users/yokugawa/run_preset/truth_vertex_finder_out/*NewVtx*
