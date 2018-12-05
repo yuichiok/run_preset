@@ -5,8 +5,7 @@ start=$2
 end=$3
 inputxml=$4
 
-outputDir=/hsm/ilc/users/yokugawa/run/data_output
-rootfileDir=./rootfile
+outputDir=/hsm/ilc/users/yokugawa/run_preset
 logDir=./log
 
 tmpxmlDir=./tmpxml
@@ -20,20 +19,23 @@ for count in $(seq $start $end)
   filename="${filename%.*}"
   echo ${filename}
   tmpxml=${tmpxmlDir}/${filename}.xml
-  rootxml=${tmpxmlDir}/${filename}.root.xml
   lastxml=${xmlDir}/${filename}.xml
   
-  log=${logDir}/${filename}.log    
-  output=${outputDir}/${filename}.slcio
-  rootfile=${rootfileDir}/${filename}.root
+  log=${logDir}/${filename}.log
+  
+  rootout1=${outputDir}/lepton_finder_out/${filename}_LF.root
+  rootout2=${outputDir}/truth_vertex_finder_out/${filename}_TVF.root
+  rootout3=${outputDir}/TrashRecoProcessor_out/before_vtx_recovery/${filename}_TRP_before.root
+	rootout4=${outputDir}/vertex_restorer_out/${filename}_VR.root
+	rootout5=${outputDir}/TrashRecoProcessor_out/after_vtx_recovery/${filename}_TRP_after.root
+	rootout6=${outputDir}/particle_tagger_out/${filename}_PT.root
+  output=${outputDir}/data_output/new/large/${filename}.slcio
 
-  sed -e "/<!-- INPUT.slcio -->/i $input" $inputxml | sed -e "/<!-- OUTPUT.root -->/i $rootfile" | sed -e "/<!-- OUTPUT.slcio -->/i $output" > $lastxml
+  sed -e "/<!-- INPUT.slcio -->/i $input" $inputxml | sed -e "/<!-- OUTPUT1.root -->/i $rootout1" | sed -e "/<!-- OUTPUT2.root -->/i $rootout2" | sed -e "/<!-- OUTPUT3.root -->/i $rootout3" | sed -e "/<!-- OUTPUT4.root -->/i $rootout4" | sed -e "/<!-- OUTPUT5.root -->/i $rootout5" | sed -e "/<!-- OUTPUT6.root -->/i $rootout6" | sed -e "/<!-- OUTPUT.slcio -->/i $output" > $lastxml
 
   ${MARLIN}/bin/Marlin $lastxml > $log 2>&1
   
   echo "$count event finished"
   
 done
-
-
 

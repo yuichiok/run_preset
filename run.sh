@@ -1,8 +1,6 @@
 #!/bin/bash
 
-#inputxml=semi-leptonic_old.xml
-#inputxml=semi-leptonic_new_large.xml
-inputxml=semi-leptonic_new_small.xml
+inputxml=preset.xml
 
 ###======= 500 GeV =======
 
@@ -17,9 +15,13 @@ inputxml=semi-leptonic_new_small.xml
 #dirin=/hsm/ilc/grid/storm/prod/ilc/mc-opt-3/ild/dst-merged/500-TDR_ws/6f_ttbar/ILD_l5_o1_v02/v02-00-01/
 
 ##===== New sample (small detector) =====##
-dirin=/hsm/ilc/grid/storm/prod/ilc/mc-opt-3/ild/dst-merged/500-TDR_ws/6f_ttbar/ILD_s5_o1_v02/v02-00-01/
+#dirin=/hsm/ilc/grid/storm/prod/ilc/mc-opt-3/ild/dst-merged/500-TDR_ws/6f_ttbar/ILD_s5_o1_v02/v02-00-01/
 
-processID=$1
+##===== New sample (large, new vertexing) =====##
+dirin=/hsm/ilc/users/yonamine/physics/lcfiplus/vertexing_6f_ttbar/
+
+#processID=$1
+processID=108670
 #nfile=-1
 nfile=12
 #nfile=1
