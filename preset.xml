@@ -239,8 +239,8 @@
   <parameter name="ROOTFileName" type="string">
     <!-- OUTPUT4.root -->
   </parameter>
-  <!--<parameter name="PFOCollection" type="string"> PandoraPFOs </parameter>-->
-  <parameter name="PFOCollection" type="string"> PandoraPFOs_withoutLepton </parameter>
+	<!--<parameter name="PFOCollection" type="string"> PandoraPFOs </parameter>-->
+	<parameter name="PFOCollection" type="string"> PandoraPFOs_withoutLepton </parameter>
   <parameter name="MCCollectionName" type="string"> MCParticle </parameter>
   <parameter name="PrimaryCollectionName" type="string"> PrimaryVertex_NewVtx </parameter>
   <parameter name="OutputCollectionName" type="string"> RecoveredJets_vtx </parameter>
@@ -261,7 +261,7 @@
   <parameter name="EGProngsCollectionName" type="string"> EGProngs </parameter>
   <parameter name="JetRelCollectionName" type="string"> FinalJets_rel </parameter>
   <parameter name="UseTracks" type="int" value="0" />
-  <parameter name="TestEfficiency" type="int" value="0" />
+  <parameter name="TestEfficiency" type="int" value="1" />
   <parameter name="angleCut" type="float" value="0.05" />
   <parameter name="offsetCut" type="float" value="0.05" />
   <parameter name="a" type="float" value="0.005" />
