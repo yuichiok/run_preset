@@ -31,7 +31,9 @@ for count in $(seq $start $end)
 	rootout6=${outputDir}/particle_tagger_out/${filename}_PT.root
   output=${outputDir}/data_output/new/large/${filename}.slcio
 
-  sed -e "/<!-- INPUT.slcio -->/i $input" $inputxml | sed -e "/<!-- OUTPUT1.root -->/i $rootout1" | sed -e "/<!-- OUTPUT2.root -->/i $rootout2" | sed -e "/<!-- OUTPUT3.root -->/i $rootout3" | sed -e "/<!-- OUTPUT4.root -->/i $rootout4" | sed -e "/<!-- OUTPUT5.root -->/i $rootout5" | sed -e "/<!-- OUTPUT6.root -->/i $rootout6" | sed -e "/<!-- OUTPUT.slcio -->/i $output" > $lastxml
+#  sed -e "/<!-- INPUT.slcio -->/i $input" $inputxml | sed -e "/<!-- OUTPUT1.root -->/i $rootout1" | sed -e "/<!-- OUTPUT2.root -->/i $rootout2" | sed -e "/<!-- OUTPUT3.root -->/i $rootout3" | sed -e "/<!-- OUTPUT4.root -->/i $rootout4" | sed -e "/<!-- OUTPUT5.root -->/i $rootout5" | sed -e "/<!-- OUTPUT6.root -->/i $rootout6" | sed -e "/<!-- OUTPUT.slcio -->/i $output" > $lastxml
+
+  sed -e "/<!-- INPUT.slcio -->/i $input" $inputxml | sed -e "/<!-- OUTPUT2.root -->/i $rootout2" | sed -e "/<!-- OUTPUT3.root -->/i $rootout3" | sed -e "/<!-- OUTPUT4.root -->/i $rootout4" | sed -e "/<!-- OUTPUT5.root -->/i $rootout5" | sed -e "/<!-- OUTPUT6.root -->/i $rootout6" | sed -e "/<!-- OUTPUT.slcio -->/i $output" > $lastxml
 
   ${MARLIN}/bin/Marlin $lastxml > $log 2>&1
   

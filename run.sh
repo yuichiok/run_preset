@@ -1,6 +1,7 @@
 #!/bin/bash
 
 inputxml=preset.xml
+#inputxml=preset_NoNewVtx.xml
 
 ###======= 500 GeV =======
 

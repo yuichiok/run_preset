@@ -8,8 +8,8 @@
 #  hadd -f root_merge/aftervertexrestore_hadronic_eLpR_kekcc_500k.root rootfile/kekcc/aftervertexrestore*I108679*.root rootfile/kekcc/aftervertexrestore*I108681*.root
 #fi
 
-#hadd -f root_merge/TrashRecoProcessor_out/before_vtx_recovery/RecoTest_before.root /hsm/ilc/users/yokugawa/run_preset/TrashRecoProcessor_out/before_vtx_recovery/*NewVtx_TRP_before*
-#hadd -f root_merge/TrashRecoProcessor_out/after_vtx_recovery/RecoTest_after.root /hsm/ilc/users/yokugawa/run_preset/TrashRecoProcessor_out/after_vtx_recovery/*NewVtx_TRP_after*
-#hadd -f root_merge/TruthVertexFinder_out/MCTest.root /hsm/ilc/users/yokugawa/run_preset/truth_vertex_finder_out/*NewVtx*
+hadd -f root_merge/TrashRecoProcessor_out/before_vtx_recovery/RecoTest_before_NoNewVtx.root /hsm/ilc/users/yokugawa/run_preset/TrashRecoProcessor_out/before_vtx_recovery/*NewVtx_TRP_before*
+hadd -f root_merge/TrashRecoProcessor_out/after_vtx_recovery/RecoTest_after_NoNewVtx.root /hsm/ilc/users/yokugawa/run_preset/TrashRecoProcessor_out/after_vtx_recovery/*NewVtx_TRP_after*
+hadd -f root_merge/TruthVertexFinder_out/MCTest_NoNewVtx.root /hsm/ilc/users/yokugawa/run_preset/truth_vertex_finder_out/*NewVtx*
 
-hadd -f root_merge/VertexRestore_out/VertexRestore.root /hsm/ilc/users/yokugawa/run_preset/vertex_restorer_out/*NewVtx*
+#hadd -f root_merge/VertexRestore_out/VertexRestore.root /hsm/ilc/users/yokugawa/run_preset/vertex_restorer_out/*NewVtx*
