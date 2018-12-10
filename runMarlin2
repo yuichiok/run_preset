@@ -29,7 +29,7 @@ for count in $(seq $start $end)
 	rootout4=${outputDir}/vertex_restorer_out/${filename}_VR.root
 	rootout5=${outputDir}/TrashRecoProcessor_out/after_vtx_recovery/${filename}_TRP_after.root
 	rootout6=${outputDir}/particle_tagger_out/${filename}_PT.root
-  output=${outputDir}/data_output/new/large/${filename}.slcio
+  output=${outputDir}/data_output/new/large/NewVtx/${filename}.slcio
 
 #  sed -e "/<!-- INPUT.slcio -->/i $input" $inputxml | sed -e "/<!-- OUTPUT1.root -->/i $rootout1" | sed -e "/<!-- OUTPUT2.root -->/i $rootout2" | sed -e "/<!-- OUTPUT3.root -->/i $rootout3" | sed -e "/<!-- OUTPUT4.root -->/i $rootout4" | sed -e "/<!-- OUTPUT5.root -->/i $rootout5" | sed -e "/<!-- OUTPUT6.root -->/i $rootout6" | sed -e "/<!-- OUTPUT.slcio -->/i $output" > $lastxml
 
