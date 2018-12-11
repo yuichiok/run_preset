@@ -5,7 +5,7 @@
 <execute>
   <!-- ========== LeptonFinder ========================== -->
   <processor name="MyIsolatedLeptonTaggingProcessor"/>  
-	<processor name="MyFastJetProcessor"/>
+  <processor name="MyFastJetProcessor"/>
   <processor name="MyParticleTagger"/>
   <processor name="JetClusteringAndFlavorTag"/>
   <!-- ========== VertexRecovery ========================== -->
