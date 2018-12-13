@@ -83,7 +83,7 @@
 <!--########  MyFastJetProcessor (2nd)  ######################################## -->
 
 <processor name="MyFastJetProcessor" type="FastJetProcessor">
-  <parameter name="algorithm" type="StringVec"> kt_algorithm 1.50 </parameter>
+  <parameter name="algorithm" type="StringVec"> ee_genkt_algorithm 1.50 </parameter>
   <parameter name="clusteringMode" type="StringVec"> ExclusiveNJets 4 </parameter>
   <parameter name="recombinationScheme" type="string"> E_scheme </parameter>
   <parameter name="recParticleIn" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs_withoutLepton </parameter>
@@ -109,8 +109,8 @@
 	<parameter name="Algorithms" type="stringVec">JetVertexRefiner FlavorTag ReadMVA</parameter>
 
  	<!-- general parameters -->
-	<parameter name="PFOCollection" type="string" value="PandoraPFOs" /> <!-- input PFO collection -->
-  <!--<parameter name="PFOCollection" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs_withoutLepton </parameter> -->
+	<!--parameter name="PFOCollection" type="string" value="PandoraPFOs" --> <!-- input PFO collection -->
+  <parameter name="PFOCollection" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs_withoutLepton </parameter>
 	<parameter name="UseMCP" type="int" value="0" /> <!-- MC info not used -->
 	<parameter name="MCPCollection" type="string" value="" /> <!-- not used -->
 	<parameter name="MCPFORelation" type="string" value="" /> <!-- not used -->
