@@ -23,7 +23,8 @@
 	<parameter name="LCIOInputFiles">
 	 <!-- INPUT.slcio --> 
 	</parameter>
-	<parameter name="GearXMLFile" value="GearOutput_new_large.xml"/>
+	<!--<parameter name="GearXMLFile" value="GearOutput_new_large.xml"/>-->
+	<parameter name="GearXMLFile" value="gear_ILD_l5_v02.xml"/>
 	<parameter name="SkipNEvents" value="0"/>
 	<parameter name="SupressCheck" value="false"/>
 	<parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> MESSAGE </parameter>
@@ -96,7 +97,7 @@
   <parameter name="ROOTFileName" type="string" >
 	<!-- OUTPUT6.root -->
 	</parameter>
-  <parameter name="NewPID" type="string" > HadronTagger </parameter>
+  <parameter name="NewPID" type="string" > KaonTagger </parameter>
   <parameter name="PFOCollection" type="string" > PandoraPFOs_withoutLepton </parameter>
   <parameter name="TrackRelCollection" type="string" > MarlinTrkTracksMCTruthLink </parameter>
   <parameter name="slope_kaon_selection" type="float" > 0.019 </parameter>
