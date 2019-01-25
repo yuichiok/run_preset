@@ -266,14 +266,14 @@
   <parameter name="JetCollectionName" type="string"> FinalJets </parameter>
   <parameter name="MissedCollectionName" type="string"> MissedParticles </parameter>
   <parameter name="MCMissedCollectionName" type="string"> MCMissedParticles </parameter>
-  <parameter name="NotUsedTracksCollectionName" type="string"> TracksFailBothCanFormPfoFlags </parameter>
+  <parameter name="NotUsedTracksCollectionName" type="string"> MarlinTrkTracks </parameter>
   <parameter name="RecoMcTruthCollectionName" type="string"> RecoMCTruthLink </parameter>
   <parameter name="MissedVtxCollectionName" type="string"> MissedParticlesVtx </parameter>
   <parameter name="BStarCollectionName" type="string"> BStar </parameter>
   <parameter name="MCVertexCollectionName" type="string"> MCVertex </parameter>
   <parameter name="EGProngsCollectionName" type="string"> EGProngs </parameter>
   <parameter name="JetRelCollectionName" type="string"> FinalJets_rel </parameter>
-  <parameter name="UseTracks" type="int" value="0" />
+  <parameter name="UseTracks" type="int" value="1" />
   <parameter name="TestEfficiency" type="int" value="0" />
   <parameter name="angleCut" type="float" value="0.05" />
   <parameter name="offsetCut" type="float" value="0.05" />
