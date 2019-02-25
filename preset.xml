@@ -273,6 +273,7 @@
   <parameter name="MCVertexCollectionName" type="string"> MCVertex </parameter>
   <parameter name="EGProngsCollectionName" type="string"> EGProngs </parameter>
   <parameter name="JetRelCollectionName" type="string"> FinalJets_rel </parameter>
+  <parameter name="Bfield" type="float"> 3.5 </parameter>
   <parameter name="UseTracks" type="int" value="1" />
   <parameter name="TestEfficiency" type="int" value="0" />
   <parameter name="angleCut" type="float" value="0.05" />

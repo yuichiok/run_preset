@@ -22,7 +22,12 @@ inputxml=preset.xml
 dirin=/hsm/ilc/users/yonamine/physics/lcfiplus/vertexing_6f_ttbar/
 
 #processID=$1
-processID=108670
+
+# yyxyev
+#processID=108670
+# yyxylv
+processID=108675
+
 #nfile=-1
 nfile=12
 #nfile=1
