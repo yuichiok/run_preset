@@ -3,17 +3,14 @@
 <!--########  Execute  ######################################## -->
 
 <execute>
-  <!-- ========== LeptonFinder ========================== -->
   <processor name="MyParticleTagger"/>
   <processor name="MyIsolatedLeptonTaggingProcessor"/>  
   <processor name="MyFastJetProcessor"/>
   <processor name="JetClusteringAndFlavorTag"/>
-  <!-- ========== VertexRecovery ========================== -->
   <processor name="MyTruthVertexFinder"/>
   <processor name="MyTrashRecoProcessorBefore"/>
   <processor name="VertexRestorerProcessor"/> 
   <processor name="MyTrashRecoProcessorAfter"/>
-  <!-- DSTOutput -->
   <processor name="DSTOutput"/>
 </execute>
 
@@ -23,8 +20,9 @@
 	<parameter name="LCIOInputFiles">
 	 <!-- INPUT.slcio --> 
 	</parameter>
-	<!--<parameter name="GearXMLFile" value="GearOutput_new_large.xml"/>-->
-	<parameter name="GearXMLFile" value="gear_ILD_l5_v02.xml"/>
+	<parameter name="GearXMLFile">
+   <!-- GEAR.xml -->
+	</parameter>
 	<parameter name="SkipNEvents" value="0"/>
 	<parameter name="SupressCheck" value="false"/>
 	<parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> MESSAGE </parameter>
@@ -93,17 +91,32 @@
 
 <!--########  MyParticleTagger  ######################################## -->
 
-<processor name="MyParticleTagger" type="ParticleTagger">
-  <parameter name="ROOTFileName" type="string" >
-	<!-- OUTPUT6.root -->
+<processor name="MyParticleTagger" type="ParticleTagger">                                                                           
+  <parameter name="ROOTFileName" type="string">
+	<!-- OUTPUT1.root -->
+	</parameter>                                              
+  <parameter name="NewPID" type="string"> KaonTagger </parameter>                                                                  
+  <parameter name="PFOCollection" type="string"> PandoraPFOs </parameter>                                                          
+  <parameter name="TrackRelCollection" type="string"> MarlinTrkTracksMCTruthLink </parameter>                                      
+  <parameter name="slope_kaon_selection" type="float">
+	<!-- Parameter a -->
+	</parameter>                                                      
+  
+	<parameter name="upper_limit_kaon_selection" type="float">
+	<!-- Parameter b1 -->
+	</parameter>                                                  
+  
+	<parameter name="lower_limit_kaon_selection" type="float">
+	<!-- Parameter b2 -->
+	</parameter>         
+  
+	<parameter name="Bfield" type="float">
+	<!-- Parameter bfield -->
 	</parameter>
-  <parameter name="NewPID" type="string" > HadronTagger </parameter>
-  <parameter name="PFOCollection" type="string" > PandoraPFOs </parameter>
-  <parameter name="TrackRelCollection" type="string" > MarlinTrkTracksMCTruthLink </parameter>
-  <parameter name="slope_kaon_selection" type="float" > 0.019 </parameter>
-  <parameter name="upper_limit_kaon_selection" type="float" > 0.1115 </parameter> 
-  <parameter name="lower_limit_kaon_selection" type="float" > 0.096 </parameter> 
+  
+	<parameter name="Pcut" type="float"> 2.0 </parameter>
 </processor>
+
 
 <!--########  JetClusteringAndFlavorTag  ######################################## -->
 
@@ -235,7 +248,7 @@
   <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> DEBUG </parameter>
   <!-- Input collection name, MCParticlesSkimmed is preferred -->
   <parameter name="SecondaryCollectionName" type="string" lcioInType="Vertex"> BuildUpVertex_NewVtx </parameter>
-  <parameter name="PFOCollectionName" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs </parameter> <!-- NOT PandoraPFOs_withoutLepton !!! -->
+  <parameter name="PFOCollectionName" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs_withoutLepton </parameter> <!-- NOT PandoraPFOs_withoutLepton !!! -->
   <parameter name="PrimaryCollectionName" type="string" lcioInType="Vertex"> PrimaryVertex_NewVtx </parameter>
   <parameter name="OutputRelName" type="string" lcioInType="LCRelation"> RecoMCTruthLink </parameter>
   <parameter name="MCVertexCollectionName" type="string" lcioInType="Vertex"> MCVertex </parameter>
@@ -273,7 +286,9 @@
   <parameter name="MCVertexCollectionName" type="string"> MCVertex </parameter>
   <parameter name="EGProngsCollectionName" type="string"> EGProngs </parameter>
   <parameter name="JetRelCollectionName" type="string"> FinalJets_rel </parameter>
-  <parameter name="Bfield" type="float"> 3.5 </parameter>
+  <parameter name="Bfield" type="float">
+	<!-- Parameter bfield -->
+	</parameter>
   <parameter name="UseTracks" type="int" value="1" />
   <parameter name="TestEfficiency" type="int" value="0" />
   <parameter name="angleCut" type="float" value="0.05" />
@@ -291,7 +306,7 @@
   <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> DEBUG </parameter>
   <!-- Input collection name, MCParticlesSkimmed is preferred -->
   <parameter name="SecondaryCollectionName" type="string" lcioInType="Vertex"> BuildUpVertex_NewVtx </parameter>
-  <parameter name="PFOCollectionName" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs </parameter> <!-- NOT PandoraPFOs_withoutLepton !!! -->
+  <parameter name="PFOCollectionName" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs_withoutLepton </parameter> <!-- NOT PandoraPFOs_withoutLepton !!! -->
   <parameter name="PrimaryCollectionName" type="string" lcioInType="Vertex"> PrimaryVertex_NewVtx </parameter>
   <parameter name="OutputRelName" type="string" lcioInType="LCRelation"> RecoMCTruthLink </parameter>
   <parameter name="MCVertexCollectionName" type="string" lcioInType="Vertex"> MCVertex </parameter>
