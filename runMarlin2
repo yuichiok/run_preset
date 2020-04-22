@@ -7,8 +7,9 @@ inputxml=$4
 gearxml=$5
 isolep=$6
 model=$7
+chiral=$8
 
-outputDir=/hsm/ilc/users/yokugawa/preset_N_run/${model}/${isolep}
+outputDir=/hsm/ilc/users/yokugawa/preset_N_run/${model}/semiLep/${chiral}/${isolep}
 logDir=./log
 
 tmpxmlDir=./tmpxml

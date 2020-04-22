@@ -3,8 +3,8 @@
 inputxml=preset.xml
 
 # small or large
-#model=l5
-model=s5
+model=l5
+#model=s5
 
 gearxml=gear_ILD_${model}_v02.xml
 
@@ -23,29 +23,33 @@ isolep=electron
 #isolep=tau
 #isolep=muon_tau
 
+chiral=eLpR
 
 ##===== New sample (large, new vertexing) =====##
 
 dirin=/hsm/ilc/users/yokugawa/
-processID=default
+processID1=default1
+processID2=default2
 
 if [ "$model" == "l5" ]; then
 	if [ "$isolep" == "electron" ]; then
 		dirin=/hsm/ilc/users/yonamine/physics/lcfiplus/vertexing_6f_ttbar/
-		processID=I108668
-		#processID=I108670
+		processID1=I108668
+		processID2=I108670
 	else
 		dirin=/home/ilc/yonamine/work/Yuichi/test20190328/run/slcio/
-		processID=eL.pR
+		processID1=yyvlyx.eL.pR
+		processID2=yyxylv.eL.pR
 	fi
 elif [ "$model" == "s5" ]; then
 	if [ "$isolep" == "electron" ]; then
 		dirin=/hsm/ilc/users/yonamine/physics/lcfiplus/vertexing_6f_ttbar_s5/
-		processID=I108668
-		#processID=I108670
+		processID1=I108668
+		processID2=I108670
 	else
 		dirin=/home/ilc/yonamine/work/Yuichi/test20190328/run_s5/slcio/
-		processID=eL.pR
+		processID1=yyvlyx.eL.pR
+		processID2=yyxylv.eL.pR
 	fi
 fi
 
@@ -60,5 +64,6 @@ nfile=-1
 #nfile=12
 #nfile=1
 #nperjob=50
+
 nperjob=3
-./submit2 $dirin $processID 1 $nfile $nperjob $inputxml $gearxml $isolep $model
+./submit2 $dirin $processID1 $processID2 1 $nfile $nperjob $inputxml $gearxml $isolep $model $chiral
